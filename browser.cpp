@@ -23,9 +23,15 @@ browser::browser(QWidget *parent) :
 
     /* now add our initial tab */
     ui->tabWidget->addTab(new BrowserTab(ui->tabWidget), BrowserTab::INITIAL_TITLE);
+    this->keyboard = new widgetKeyBoard(false);
+    this->keyboard->setZoomFacility(true);
+    this->keyboard->enableSwitchingEcho(false); // enable possibility to change echo through keyboard
+    this->keyboard->createKeyboard(); // only create keyboard
+    this->keyboard->show(this);
 }
 
 browser::~browser()
 {
+    delete this->keyboard;
     delete ui;
 }

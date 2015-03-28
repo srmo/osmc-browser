@@ -7,6 +7,7 @@
 #define BROWSER_H
 
 #include <QMainWindow>
+#include "widgetKeyBoard.h"
 
 namespace Ui {
 class browser;
@@ -22,6 +23,7 @@ public:
 
 private:
     Ui::browser *ui;
+    widgetKeyBoard *keyboard;
 };
 
 #endif // BROWSER_H

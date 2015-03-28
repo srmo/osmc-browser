@@ -7,11 +7,11 @@
 QT       += core gui webkitwidgets widgets
 CONFIG   += console
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets multimedia
 
 TARGET = osmc-browser
 TEMPLATE = app
-
+LIBS += /usr/lib/libqtinteractiveosmc.dylib
 
 SOURCES += main.cpp\
         browser.cpp \
@@ -20,7 +20,10 @@ SOURCES += main.cpp\
 
 HEADERS  += browser.h \
     logger.h \
-    browsertab.h
+    browsertab.h \
+    widgetKeyBoard.h \
+    QKeyPushButton.h \
+    qtinteractiveosmc_global.h
 
 FORMS    += browser.ui \
     browsertab.ui
